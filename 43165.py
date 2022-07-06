@@ -19,3 +19,5 @@ def solution(numbers, target):
                 s.append((na,nb))
     
     return answer
+
+print(solution([4, 1, 2, 1], 4))

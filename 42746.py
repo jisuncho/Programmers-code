@@ -1,15 +1,8 @@
-from itertools import permutations
-def solution(numbers):
-    answer = ''
-    maxx = 0
-    num = permutations(numbers, len(numbers))
-    for n in num:
-        temp = ''
-        for i in range(len(n)):
-            temp += str(n[i])
-        maxx = max(int(temp),maxx)
-    answer = str(maxx)
-    print(answer)
-    return answer
+def solution(num):
+    
+    num = list(map(str, num))
+    num.sort(key = lambda x : x*3, reverse = True)
+    
+    return str(int(''.join(num)))
 
-solution([6, 10, 2])
+print(solution([6,66,67,666,667,6676]))
