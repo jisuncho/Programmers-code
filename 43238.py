@@ -1,18 +1,18 @@
 def solution(n, times):
     answer = 0
+    times = sorted(times)
     left = 1
-    right = max(times) * n
+    right = n * times[-1]
     
-    while left <= right:
+    
+    while(left <= right):
+        total = 0
         mid = (left + right) // 2
-        people = 0
         for time in times:
-            people += mid // time
-            if people >= n:
-                break
-        if people >= n:
-            right = mid - 1
+            total += mid // time
+        if total >= n:
             answer = mid
+            right = mid - 1
         else:
             left = mid + 1
     return answer
